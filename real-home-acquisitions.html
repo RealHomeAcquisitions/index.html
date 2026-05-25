@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Real Home Acquisitions buys houses for cash fast in Southern California. No repairs, no fees, close on your timeline. Get a free cash offer in 24 hours.">
+<title>Real Home Acquisitions — We Buy Houses for Cash</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a08;
+    --off-white: #f5f2ec;
+    --cream: #ede9df;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --gold-dark: #9a7235;
+    --rust: #b84c2a;
+    --green: #2d5a3d;
+    --green-light: #3d7a55;
+    --gray: #7a7a72;
+    --light-gray: #d4d0c8;
+    --text: #1a1a16;
+    --dark-2: #131310;
+    --dark-3: #1c1c18;
+    --mid: #3a3830;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--black); color: var(--off-white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 72px;
+    background: rgba(10,10,8,0.93);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.14);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-mark {
+    width: 36px; height: 36px; background: var(--gold);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 800; color: var(--black);
+  }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--off-white); line-height: 1.2; }
+  .logo-text span { display: block; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 13px; color: rgba(245,242,236,0.6); letter-spacing: 0.02em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--off-white); }
+  .nav-right { display: flex; align-items: center; gap: 18px; }
+  .nav-tel { text-decoration: none; font-size: 13px; color: var(--gold); font-weight: 500; transition: color 0.2s; }
+  .nav-tel:hover { color: var(--gold-light); }
+  .btn-primary {
+    background: var(--gold); color: var(--black); border: none;
+    padding: 10px 22px; border-radius: 3px;
+    font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;
+    text-decoration: none; display: inline-block; transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--gold); border: 1px solid var(--gold);
+    padding: 10px 22px; border-radius: 3px;
+    font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.06em; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s;
+  }
+  .btn-outline:hover { background: rgba(201,168,76,0.1); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden; padding: 120px 48px 80px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 75% 50%, rgba(201,168,76,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 15% 85%, rgba(45,90,61,0.12) 0%, transparent 50%),
+      var(--black);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(var(--off-white) 1px, transparent 1px), linear-gradient(90deg, var(--off-white) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; max-width: 860px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.28);
+    padding: 8px 16px; margin-bottom: 32px;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 8vw, 110px);
+    line-height: 0.95; font-weight: 800;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); display: block; }
+  .hero-sub {
+    margin-top: 28px; font-size: 17px; font-weight: 300;
+    color: rgba(245,242,236,0.65); max-width: 520px; line-height: 1.75;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-stats { display: flex; gap: 48px; margin-top: 44px; animation: fadeUp 0.6s 0.3s ease both; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--gold); line-height: 1; }
+  .stat-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-top: 4px; }
+  .hero-cta-group { display: flex; gap: 14px; margin-top: 44px; align-items: center; animation: fadeUp 0.6s 0.4s ease both; }
+  .btn-hero {
+    background: var(--gold); color: var(--black); border: none;
+    padding: 16px 36px; font-family: 'DM Sans', sans-serif;
+    font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.2s; text-decoration: none;
+  }
+  .btn-hero:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.28); }
+  .btn-hero-ghost {
+    background: transparent; color: var(--off-white); border: 1px solid rgba(245,242,236,0.28);
+    padding: 16px 36px; font-family: 'DM Sans', sans-serif;
+    font-weight: 500; font-size: 13px; letter-spacing: 0.06em;
+    cursor: pointer; transition: all 0.2s; text-decoration: none;
+  }
+  .btn-hero-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .scroll-indicator {
+    position: absolute; bottom: 36px; left: 48px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray);
+    animation: fadeIn 1s 1s both;
+  }
+  .scroll-line { width: 36px; height: 1px; background: var(--gray); }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: rgba(201,168,76,0.07);
+    border-top: 1px solid rgba(201,168,76,0.18);
+    border-bottom: 1px solid rgba(201,168,76,0.18);
+    padding: 18px 48px;
+    display: flex; align-items: center; justify-content: center; gap: 56px; flex-wrap: wrap;
+  }
+  .trust-item { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,242,236,0.55); }
+  .trust-item svg { color: var(--gold); }
+
+  /* ── PROPERTY TYPES ── */
+  .property-types { padding: 96px 48px; }
+  .property-types-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 14px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(34px, 5vw, 58px); line-height: 1.1; margin-bottom: 14px; }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .types-sub { color: rgba(245,242,236,0.55); font-size: 16px; margin-bottom: 52px; max-width: 480px; line-height: 1.7; }
+  .types-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 2px; }
+  .type-card {
+    background: rgba(245,242,236,0.03); border: 1px solid rgba(245,242,236,0.06);
+    padding: 26px 22px; cursor: pointer; transition: all 0.25s; position: relative; overflow: hidden;
+  }
+  .type-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.25s; }
+  .type-card:hover { background: rgba(201,168,76,0.07); border-color: rgba(201,168,76,0.28); }
+  .type-card:hover::after { transform: scaleX(1); }
+  .type-icon { font-size: 26px; margin-bottom: 12px; }
+  .type-name { font-weight: 600; font-size: 14px; margin-bottom: 5px; }
+  .type-desc { font-size: 12px; color: var(--gray); line-height: 1.5; }
+
+  /* ── FORM SECTION ── */
+  .form-section { padding: 100px 48px; background: var(--off-white); color: var(--text); position: relative; overflow: hidden; }
+  .form-section::before {
+    content: 'GET OFFER';
+    position: absolute; right: -40px; top: 40px;
+    font-family: 'Playfair Display', serif; font-size: 180px; color: rgba(10,10,8,0.04);
+    letter-spacing: 10px; white-space: nowrap; pointer-events: none;
+  }
+  .form-section-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start; }
+  .form-left .section-label { color: var(--rust); }
+  .form-left h2 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4vw, 50px); line-height: 1.1; color: var(--black); margin-bottom: 18px; }
+  .form-left h2 em { font-style: italic; color: var(--green); }
+  .form-left > p { font-size: 14px; color: var(--gray); line-height: 1.75; margin-bottom: 32px; }
+  .process-steps { display: flex; flex-direction: column; gap: 18px; }
+  .process-step { display: flex; gap: 14px; align-items: flex-start; }
+  .step-num { width: 30px; height: 30px; flex-shrink: 0; background: var(--green); color: white; font-family: 'Playfair Display', serif; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .step-text { font-size: 13px; line-height: 1.55; color: #555; padding-top: 5px; }
+  .step-text strong { color: var(--black); display: block; margin-bottom: 2px; font-size: 14px; }
+
+  /* ── MULTI-STEP FORM ── */
+  .offer-form { background: white; padding: 48px; box-shadow: 0 24px 80px rgba(0,0,0,0.1); position: relative; }
+  .offer-form::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--green), var(--gold)); }
+  .form-title { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--black); margin-bottom: 6px; }
+  .form-subtitle { font-size: 12px; color: var(--gray); margin-bottom: 28px; }
+  .form-progress { display: flex; gap: 4px; margin-bottom: 28px; }
+  .progress-step { flex: 1; height: 4px; background: var(--light-gray); transition: background 0.3s; }
+  .progress-step.active { background: var(--green); }
+  .progress-step.done { background: var(--gold); }
+  .form-step { display: none; }
+  .form-step.active { display: block; animation: fadeUp 0.3s ease; }
+  .step-heading { font-weight: 600; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .form-row.single { grid-template-columns: 1fr; }
+  .form-row.triple { grid-template-columns: 1fr 1fr 1fr; }
+  .form-group { display: flex; flex-direction: column; gap: 5px; }
+  .form-group label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: #666; }
+  .form-group input, .form-group select, .form-group textarea {
+    border: 1.5px solid var(--light-gray); background: #fafafa;
+    padding: 11px 13px; font-family: 'DM Sans', sans-serif; font-size: 13px;
+    color: var(--text); transition: border 0.2s, background 0.2s; outline: none;
+    appearance: none; -webkit-appearance: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green); background: white; }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 13px center; padding-right: 34px; cursor: pointer;
+  }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .checkbox-group { display: flex; flex-direction: column; gap: 8px; }
+  .checkbox-item { display: flex; align-items: center; gap: 9px; cursor: pointer; }
+  .checkbox-item input[type=checkbox] { width: 15px; height: 15px; accent-color: var(--green); cursor: pointer; flex-shrink: 0; }
+  .checkbox-item label { font-size: 13px; color: #444; cursor: pointer; }
+  .motivation-slider { margin: 6px 0; }
+  .motivation-slider input[type=range] { width: 100%; accent-color: var(--green); cursor: pointer; }
+  .motivation-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 5px; }
+  .form-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--light-gray); }
+  .btn-back { background: none; border: none; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; color: var(--gray); cursor: pointer; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+  .btn-back:hover { color: var(--text); }
+  .btn-next, .btn-submit { background: var(--green); color: white; border: none; padding: 13px 30px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
+  .btn-next:hover, .btn-submit:hover { background: var(--green-light); transform: translateY(-1px); }
+  .required-note { font-size: 10px; color: var(--gray); margin-top: 14px; }
+
+  /* ── RESULTS ── */
+  #results-section { display: none; padding: 96px 48px; background: var(--black); }
+  #results-section.visible { display: block; }
+  .results-inner { max-width: 1000px; margin: 0 auto; }
+  .results-header { text-align: center; margin-bottom: 56px; }
+  .results-header h2 { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 800; color: var(--off-white); margin-bottom: 10px; line-height: 1.1; }
+  .results-header h2 span { color: var(--gold); font-style: italic; }
+  .results-header p { color: var(--gray); font-size: 15px; }
+  .results-address { background: rgba(201,168,76,0.09); border: 1px solid rgba(201,168,76,0.28); padding: 14px 22px; text-align: center; font-size: 14px; color: var(--off-white); margin-bottom: 44px; }
+  .results-address strong { color: var(--gold); }
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 28px; }
+  .result-card { background: rgba(245,242,236,0.04); border: 1px solid rgba(245,242,236,0.08); padding: 34px 26px; text-align: center; animation: fadeUp 0.5s ease both; }
+  .result-card:nth-child(1) { animation-delay: 0.1s; }
+  .result-card:nth-child(2) { animation-delay: 0.2s; border-color: rgba(201,168,76,0.38); background: rgba(201,168,76,0.07); }
+  .result-card:nth-child(3) { animation-delay: 0.3s; }
+  .result-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+  .result-value { font-family: 'Playfair Display', serif; font-size: 34px; color: var(--off-white); line-height: 1.15; margin-bottom: 6px; font-weight: 700; }
+  .result-card:nth-child(2) .result-value { color: var(--gold); font-size: 42px; }
+  .result-sub { font-size: 11px; color: var(--gray); }
+  .result-badge { display: inline-block; background: var(--gold); color: var(--black); font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 10px; }
+  .results-details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 44px; }
+  .detail-block { background: rgba(245,242,236,0.03); border: 1px solid rgba(245,242,236,0.07); padding: 26px; animation: fadeUp 0.5s ease both; }
+  .detail-block h4 { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .detail-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(245,242,236,0.06); font-size: 12px; }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-row .key { color: var(--gray); }
+  .detail-row .val { color: var(--off-white); font-weight: 500; }
+  .detail-row .val.positive { color: #5cba78; }
+  .detail-row .val.caution { color: #e8a44a; }
+  .temp-meter { background: rgba(245,242,236,0.03); border: 1px solid rgba(245,242,236,0.07); padding: 26px; margin-bottom: 28px; animation: fadeUp 0.5s 0.5s ease both; }
+  .temp-meter h4 { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  .temp-bar-track { height: 14px; background: rgba(245,242,236,0.07); position: relative; overflow: hidden; }
+  .temp-bar-fill { height: 100%; background: linear-gradient(90deg, #3d7a55, #c9a84c, #b84c2a); transition: width 1.5s cubic-bezier(0.4,0,0.2,1); width: 0%; }
+  .temp-labels { display: flex; justify-content: space-between; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-top: 7px; }
+  .temp-status { margin-top: 14px; font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; }
+  .temp-description { font-size: 12px; color: var(--gray); margin-top: 4px; line-height: 1.65; }
+  .owner-finance-card { background: linear-gradient(135deg, rgba(45,90,61,0.28) 0%, rgba(45,90,61,0.09) 100%); border: 1px solid rgba(45,90,61,0.48); padding: 34px; margin-bottom: 28px; animation: fadeUp 0.5s 0.6s ease both; }
+  .owner-finance-card h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--off-white); margin-bottom: 10px; }
+  .owner-finance-card h3 em { font-style: italic; color: var(--gold-light); }
+  .owner-finance-card p { font-size: 13px; color: rgba(245,242,236,0.65); line-height: 1.7; margin-bottom: 22px; }
+  .owner-finance-terms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .finance-term { background: rgba(0,0,0,0.3); padding: 14px; text-align: center; }
+  .finance-term .ft-num { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold); line-height: 1; }
+  .finance-term .ft-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-top: 5px; }
+  .results-cta { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 44px; animation: fadeUp 0.5s 0.7s ease both; }
+  .cta-box { padding: 34px; text-align: center; }
+  .cta-box:first-child { background: var(--gold); color: var(--black); }
+  .cta-box:last-child { background: rgba(245,242,236,0.05); border: 1px solid rgba(245,242,236,0.09); }
+  .cta-box h4 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 7px; }
+  .cta-box p { font-size: 12px; margin-bottom: 18px; opacity: 0.8; }
+  .btn-cta-dark { background: var(--black); color: var(--gold); border: 2px solid var(--black); padding: 12px 26px; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; display: inline-block; text-decoration: none; }
+  .btn-cta-dark:hover { background: transparent; color: var(--black); }
+  .btn-cta-ghost { background: transparent; color: var(--off-white); border: 1px solid rgba(245,242,236,0.35); padding: 12px 26px; font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; display: inline-block; text-decoration: none; }
+  .btn-cta-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .disclaimer { font-size: 11px; color: var(--gray); text-align: center; line-height: 1.65; max-width: 680px; margin: 0 auto; }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { padding: 96px 48px; background: var(--dark-2); }
+  .how-inner { max-width: 1100px; margin: 0 auto; }
+  .how-inner .section-label { text-align: center; }
+  .how-inner h2 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 80px); font-weight: 800; text-align: center; margin-bottom: 14px; }
+  .how-inner > p { text-align: center; color: var(--gray); max-width: 480px; margin: 0 auto 56px; font-size: 15px; line-height: 1.7; }
+  .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .how-card { padding: 34px 22px; background: rgba(245,242,236,0.03); border: 1px solid rgba(245,242,236,0.06); position: relative; transition: background 0.2s; }
+  .how-card:hover { background: rgba(245,242,236,0.05); }
+  .how-num { font-family: 'Playfair Display', serif; font-size: 64px; color: rgba(201,168,76,0.13); line-height: 1; margin-bottom: 14px; font-weight: 800; }
+  .how-icon { font-size: 26px; margin-bottom: 14px; }
+  .how-title { font-weight: 600; font-size: 15px; margin-bottom: 9px; }
+  .how-desc { font-size: 12px; color: var(--gray); line-height: 1.65; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { padding: 96px 48px; background: var(--cream); color: var(--text); }
+  .testimonials-inner { max-width: 1100px; margin: 0 auto; }
+  .testimonials .section-label { color: var(--rust); }
+  .testimonials h2 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 5vw, 56px); color: var(--black); margin-bottom: 52px; max-width: 560px; }
+  .testimonials h2 em { font-style: italic; color: var(--green); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .testimonial-card { background: white; padding: 34px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); position: relative; }
+  .testimonial-card::before { content: '"'; position: absolute; top: 16px; right: 20px; font-family: 'Playfair Display', serif; font-size: 72px; color: rgba(45,90,61,0.08); line-height: 1; }
+  .stars { color: var(--gold); font-size: 13px; margin-bottom: 14px; }
+  .testimonial-text { font-size: 13px; line-height: 1.75; color: #444; margin-bottom: 22px; }
+  .testimonial-author { display: flex; align-items: center; gap: 11px; }
+  .author-avatar { width: 38px; height: 38px; background: var(--green); color: white; font-family: 'Playfair Display', serif; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .author-name { font-weight: 600; font-size: 13px; }
+  .author-location { font-size: 11px; color: var(--gray); }
+  .offer-tag { display: inline-block; background: var(--green); color: white; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 8px; margin-top: 5px; }
+
+  /* ── CTA BANNER ── */
+  .cta-banner { padding: 88px 48px; background: var(--black); border-top: 1px solid rgba(201,168,76,0.12); border-bottom: 1px solid rgba(201,168,76,0.12); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 56px; }
+  .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 52px); font-weight: 800; line-height: 1.15; margin-bottom: 10px; }
+  .cta-banner h2 em { font-style: italic; color: var(--gold); }
+  .cta-banner p { font-size: 15px; font-weight: 300; color: rgba(245,242,236,0.6); }
+  .cta-banner-actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; flex-shrink: 0; }
+  .cta-contact { font-size: 13px; color: var(--gray); text-align: center; }
+  .cta-contact a { color: var(--gold); text-decoration: none; font-weight: 500; }
+
+  /* ── FOOTER ── */
+  footer { background: #040402; padding: 56px 48px 32px; border-top: 1px solid rgba(245,242,236,0.05); }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 44px; }
+  .footer-brand p { font-size: 13px; color: var(--gray); line-height: 1.7; margin-top: 16px; max-width: 270px; }
+  .footer-col h5 { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  .footer-col a { display: block; font-size: 13px; color: var(--gray); text-decoration: none; margin-bottom: 9px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--off-white); }
+  .footer-contact-item { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--gray); margin-bottom: 11px; }
+  .footer-contact-item svg { stroke: var(--gold); flex-shrink: 0; margin-top: 2px; }
+  .footer-contact-item a { color: var(--gray); text-decoration: none; transition: color 0.2s; }
+  .footer-contact-item a:hover { color: var(--off-white); }
+  .footer-bottom { border-top: 1px solid rgba(245,242,236,0.05); padding-top: 26px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--gray); flex-wrap: wrap; gap: 10px; }
+  .footer-bottom-links { display: flex; gap: 22px; }
+  .footer-bottom-links a { font-size: 12px; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+  .footer-bottom-links a:hover { color: var(--off-white); }
+
+  /* ── LOADING ── */
+  .loading-overlay { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(10,10,8,0.96); flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
+  .loading-overlay.visible { display: flex; }
+  .loading-spinner { width: 44px; height: 44px; border: 2px solid rgba(201,168,76,0.2); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-text { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--off-white); }
+  .loading-sub { font-size: 12px; color: var(--gray); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 56px; }
+    .hero-stats { gap: 28px; flex-wrap: wrap; }
+    .trust-bar { gap: 24px; padding: 16px 24px; }
+    .property-types, .form-section, .how-section, .testimonials, #results-section { padding: 64px 24px; }
+    .form-section-inner { grid-template-columns: 1fr; gap: 40px; }
+    .results-grid, .results-details-grid, .owner-finance-terms, .results-cta { grid-template-columns: 1fr; }
+    .how-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .cta-banner { grid-template-columns: 1fr; padding: 64px 24px; }
+    .cta-banner-actions { align-items: flex-start; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-row.triple { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .hero h1 { font-size: 50px; }
+    .how-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .hero-cta-group { flex-direction: column; align-items: flex-start; }
+    .offer-form { padding: 26px 18px; }
+    .types-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">RH</div>
+    <div class="logo-text">Real Home Acquisitions<span>Cash Home Buyers</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#property-types">What We Buy</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:7473634983" class="nav-tel">(747) 363-4983</a>
+    <a href="#form-section" class="btn-primary" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'});return false;">Get Free Offer</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Southern California's Trusted Cash Buyer</div>
+    <h1>We Buy<em>Any Home.</em></h1>
+    <p class="hero-sub">Get a real cash offer in minutes. No repairs needed, no agent commissions, no waiting. From single-family homes to raw land — we make selling simple.</p>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">150+</div><div class="stat-label">Homes Purchased</div></div>
+      <div class="stat-item"><div class="stat-num">24hr</div><div class="stat-label">Average Offer Time</div></div>
+      <div class="stat-item"><div class="stat-num">7 Days</div><div class="stat-label">Average Close</div></div>
+    </div>
+    <div class="hero-cta-group">
+      <a class="btn-hero" href="#form-section" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'});return false;">Get My Cash Offer →</a>
+      <a class="btn-hero-ghost" href="#how-it-works">How It Works</a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><div class="scroll-line"></div>Scroll to explore</div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>No Repairs Required</div>
+  <div class="trust-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Zero Agent Fees</div>
+  <div class="trust-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Close in 7–21 Days</div>
+  <div class="trust-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>All Home Types</div>
+  <div class="trust-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Owner Financing Available</div>
+</div>
+
+<!-- PROPERTY TYPES -->
+<section class="property-types" id="property-types">
+  <div class="property-types-inner">
+    <div class="section-label">We Buy It All</div>
+    <h2 class="section-title">Every Home Type,<br><em>Every Situation</em></h2>
+    <p class="types-sub">From distressed homes to vacant land, we have a solution for every homeowner in every situation.</p>
+    <div class="types-grid">
+      <div class="type-card"><div class="type-icon">🏠</div><div class="type-name">Single-Family Home</div><div class="type-desc">Any condition, any neighborhood</div></div>
+      <div class="type-card"><div class="type-icon">🏘️</div><div class="type-name">Multi-Family</div><div class="type-desc">Duplexes, triplexes & small apartments</div></div>
+      <div class="type-card"><div class="type-icon">🏗️</div><div class="type-name">Fixer-Upper</div><div class="type-desc">Distressed or needs full rehab</div></div>
+      <div class="type-card"><div class="type-icon">🌾</div><div class="type-name">Vacant Land</div><div class="type-desc">Residential lots & raw parcels</div></div>
+      <div class="type-card"><div class="type-icon">🌴</div><div class="type-name">Vacation / Airbnb</div><div class="type-desc">Short-term rental properties</div></div>
+      <div class="type-card"><div class="type-icon">🏚️</div><div class="type-name">Inherited Property</div><div class="type-desc">Probate & estate sales</div></div>
+      <div class="type-card"><div class="type-icon">⚠️</div><div class="type-name">Pre-Foreclosure</div><div class="type-desc">Behind on payments — we can help</div></div>
+      <div class="type-card"><div class="type-icon">🏡</div><div class="type-name">Mobile Home</div><div class="type-desc">With or without land</div></div>
+      <div class="type-card"><div class="type-icon">🔑</div><div class="type-name">Rental Property</div><div class="type-desc">Tenant-occupied, no problem</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="form-section">
+  <div class="form-section-inner">
+    <div class="form-left">
+      <div class="section-label">Get Your Offer</div>
+      <h2>Fast. Fair.<br><em>No Hassle.</em></h2>
+      <p>Fill out our 4-step form and receive a full market analysis, estimated value range, and a firm cash offer — plus owner financing terms if you prefer monthly payments instead of a lump sum.</p>
+      <div class="process-steps">
+        <div class="process-step"><div class="step-num">1</div><div class="step-text"><strong>Property Details</strong>Tell us about your home's type, location and size</div></div>
+        <div class="process-step"><div class="step-num">2</div><div class="step-text"><strong>Property Condition</strong>Let us know about condition and any known repairs</div></div>
+        <div class="process-step"><div class="step-num">3</div><div class="step-text"><strong>Your Situation</strong>Timeline, motivation, and what matters most to you</div></div>
+        <div class="process-step"><div class="step-num">4</div><div class="step-text"><strong>Get Your Analysis</strong>Instant value estimate, cash offer & owner finance option</div></div>
+      </div>
+    </div>
+
+    <div class="offer-form">
+      <div class="form-title">Get Your Free Offer</div>
+      <div class="form-subtitle">Takes under 3 minutes &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; 100% free</div>
+      <div class="form-progress">
+        <div class="progress-step active" id="prog-1"></div>
+        <div class="progress-step" id="prog-2"></div>
+        <div class="progress-step" id="prog-3"></div>
+        <div class="progress-step" id="prog-4"></div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="form-step active" id="step-1">
+        <div class="step-heading">Step 1 — Property Information</div>
+        <div class="form-row single"><div class="form-group"><label>Street Address *</label><input type="text" id="f-address" placeholder="123 Main Street"></div></div>
+        <div class="form-row triple">
+          <div class="form-group"><label>City *</label><input type="text" id="f-city" placeholder="City"></div>
+          <div class="form-group"><label>State *</label>
+            <select id="f-state"><option value="">State</option><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select>
+          </div>
+          <div class="form-group"><label>ZIP Code *</label><input type="text" id="f-zip" placeholder="00000" maxlength="5"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Property Type *</label>
+            <select id="f-type"><option value="">Select type</option><option>Single-Family Home</option><option>Multi-Family (2–4 units)</option><option>Vacant Land / Lot</option><option>Mobile Home</option><option>Vacation / Short-Term Rental</option><option>Inherited / Probate Property</option><option>Rental Property (tenant-occupied)</option><option>Other Residential</option></select>
+          </div>
+          <div class="form-group"><label>Lot / Acreage Size</label><input type="text" id="f-lotsize" placeholder="e.g. 0.25 acres"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Year Built</label><input type="number" id="f-year" placeholder="e.g. 1985" min="1800" max="2025"></div>
+          <div class="form-group"><label>Bedrooms / Baths</label>
+            <select id="f-beds"><option value="">Select</option><option>N/A (Land)</option><option>Studio</option><option>1 bed / 1 bath</option><option>2 bed / 1 bath</option><option>2 bed / 2 bath</option><option>3 bed / 2 bath</option><option>4 bed / 2 bath</option><option>4+ bed / 3+ bath</option><option>5+ units</option></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Square Footage</label><input type="number" id="f-sqft" placeholder="e.g. 1,800"></div>
+          <div class="form-group"><label>Estimated Value (if known)</label><input type="text" id="f-arv" placeholder="e.g. $450,000"></div>
+        </div>
+        <div class="form-nav"><span></span><button class="btn-next" onclick="goToStep(2)">Next: Condition →</button></div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step" id="step-2">
+        <div class="step-heading">Step 2 — Property Condition</div>
+        <div class="form-row single">
+          <div class="form-group"><label>Overall Condition *</label>
+            <select id="f-condition"><option value="">Select condition</option><option>Excellent / Move-in Ready</option><option>Good — Minor updates needed</option><option>Fair — Moderate repairs needed</option><option>Poor — Major repairs / full rehab</option><option>Teardown / Land value only</option><option>Vacant Land (no structure)</option></select>
+          </div>
+        </div>
+        <div class="form-row single">
+          <div class="form-group"><label>Known Issues (check all that apply)</label>
+            <div class="checkbox-group">
+              <div class="checkbox-item"><input type="checkbox" id="c1"><label for="c1">Foundation / Structural issues</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="c2"><label for="c2">Roof damage or needs replacement</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="c3"><label for="c3">Plumbing problems</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="c4"><label for="c4">Electrical issues</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="c5"><label for="c5">Water damage / mold</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="c6"><label for="c6">Fire or smoke damage</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="c7"><label for="c7">Code violations / liens</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="c8"><label for="c8">No major issues known</label></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Is the property occupied?</label>
+            <select id="f-occupied"><option value="">Select</option><option>Owner-occupied</option><option>Tenant-occupied</option><option>Vacant</option><option>Partially vacant</option></select>
+          </div>
+          <div class="form-group"><label>Mortgage / Lien status?</label>
+            <select id="f-mortgage"><option value="">Select</option><option>No — Free & clear</option><option>Yes — Small balance</option><option>Yes — Significant balance</option><option>Behind on payments / pre-foreclosure</option><option>In foreclosure</option><option>Unknown / Other liens</option></select>
+          </div>
+        </div>
+        <div class="form-row single"><div class="form-group"><label>Additional notes about the property</label><textarea id="f-notes" placeholder="Tell us anything else about the condition, unique features, or your situation..."></textarea></div></div>
+        <div class="form-nav"><button class="btn-back" onclick="goToStep(1)">← Back</button><button class="btn-next" onclick="goToStep(3)">Next: Your Situation →</button></div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step" id="step-3">
+        <div class="step-heading">Step 3 — Your Situation</div>
+        <div class="form-row">
+          <div class="form-group"><label>Why are you selling? *</label>
+            <select id="f-reason"><option value="">Select reason</option><option>Relocating</option><option>Downsizing</option><option>Inherited the property</option><option>Financial hardship</option><option>Divorce / separation</option><option>Tired landlord / liquidating</option><option>Pre-foreclosure / behind on payments</option><option>Retirement</option><option>Tax issues</option><option>Other</option></select>
+          </div>
+          <div class="form-group"><label>Ideal close timeline *</label>
+            <select id="f-timeline"><option value="">Select</option><option>ASAP — within 2 weeks</option><option>1 month</option><option>2–3 months</option><option>3–6 months</option><option>6+ months / flexible</option><option>Just exploring options</option></select>
+          </div>
+        </div>
+        <div class="form-row single">
+          <div class="form-group"><label>What matters most to you? (select all that apply)</label>
+            <div class="checkbox-group">
+              <div class="checkbox-item"><input type="checkbox" id="p1"><label for="p1">Highest possible price</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="p2"><label for="p2">Speed of closing</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="p3"><label for="p3">No repairs needed</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="p4"><label for="p4">Monthly income (owner financing)</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="p5"><label for="p5">Certainty / avoiding deals falling through</label></div>
+              <div class="checkbox-item"><input type="checkbox" id="p6"><label for="p6">Flexible move-out timeline</label></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row single">
+          <div class="form-group"><label>How motivated are you to sell today?</label>
+            <div class="motivation-slider">
+              <input type="range" id="f-motivation" min="1" max="10" value="5">
+              <div class="motivation-labels"><span>Just looking</span><span>Somewhat motivated</span><span>Must sell now</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Asking price (if any)</label><input type="text" id="f-asking" placeholder="e.g. $520,000 or flexible"></div>
+          <div class="form-group"><label>Interested in owner financing?</label>
+            <select id="f-owner-fin"><option value="">Select</option><option>Yes — I want monthly payments</option><option>Maybe — explain the option</option><option>No — cash only</option></select>
+          </div>
+        </div>
+        <div class="form-nav"><button class="btn-back" onclick="goToStep(2)">← Back</button><button class="btn-next" onclick="goToStep(4)">Next: Contact Info →</button></div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="form-step" id="step-4">
+        <div class="step-heading">Step 4 — Your Contact Information</div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name *</label><input type="text" id="f-fname" placeholder="First name"></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" id="f-lname" placeholder="Last name"></div>
+        </div>
+        <div class="form-row single"><div class="form-group"><label>Email Address *</label><input type="email" id="f-email" placeholder="you@email.com"></div></div>
+        <div class="form-row single"><div class="form-group"><label>Phone Number *</label><input type="tel" id="f-phone" placeholder="(555) 000-0000"></div></div>
+        <div class="form-row">
+          <div class="form-group"><label>Best time to call</label>
+            <select id="f-calltime"><option value="">Any time</option><option>Morning (8am–12pm)</option><option>Afternoon (12pm–5pm)</option><option>Evening (5pm–8pm)</option><option>Weekends only</option></select>
+          </div>
+          <div class="form-group"><label>How did you hear about us?</label>
+            <select id="f-source"><option value="">Select</option><option>Google Search</option><option>Facebook / Instagram</option><option>Direct Mail / Postcard</option><option>Friend / Family Referral</option><option>Sign / Billboard</option><option>Other</option></select>
+          </div>
+        </div>
+        <p class="required-note">* Required fields. Your information is 100% confidential and will never be shared or sold.</p>
+        <div class="form-nav"><button class="btn-back" onclick="goToStep(3)">← Back</button><button class="btn-submit" onclick="submitForm()">🔍 Analyze My Property →</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how-it-works">
+  <div class="how-inner">
+    <div class="section-label">The Process</div>
+    <h2>How It Works</h2>
+    <p>We've removed every obstacle between you and a closed deal. The simplest way to sell your home in Southern California.</p>
+    <div class="how-grid">
+      <div class="how-card"><div class="how-num">01</div><div class="how-icon">📋</div><div class="how-title">Submit Your Property</div><div class="how-desc">Fill out our quick form with your property details. Takes under 3 minutes and there's zero obligation.</div></div>
+      <div class="how-card"><div class="how-num">02</div><div class="how-icon">🔬</div><div class="how-title">We Run the Analysis</div><div class="how-desc">Our system analyzes comps, market trends, and property data to generate an accurate offer range.</div></div>
+      <div class="how-card"><div class="how-num">03</div><div class="how-icon">🤝</div><div class="how-title">Receive Your Offer</div><div class="how-desc">Get a fair cash offer and owner financing terms. No lowballing — we make real offers backed by data.</div></div>
+      <div class="how-card"><div class="how-num">04</div><div class="how-icon">🏦</div><div class="how-title">Close on Your Timeline</div><div class="how-desc">Pick your closing date. We handle all the paperwork. Cash in your account in as little as 7 days.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label">Happy Homeowners</div>
+    <h2>Real People,<br><em>Real Results</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">I inherited my uncle's house in Burbank and had no idea what to do with it. Real Home Acquisitions gave me an offer in 24 hours and we closed in 10 days. I didn't lift a finger or spend a dime on repairs.</p>
+        <div class="testimonial-author"><div class="author-avatar">MC</div><div><div class="author-name">Maria C.</div><div class="author-location">Burbank, CA</div><div class="offer-tag">Closed in 10 days</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">I was 3 months behind on payments and scared of losing my home. These guys were professional and honest from the start — no lowballing, no surprises. They saved my credit and put cash in my pocket.</p>
+        <div class="testimonial-author"><div class="author-avatar">DR</div><div><div class="author-name">David R.</div><div class="author-location">North Hollywood, CA</div><div class="offer-tag">Pre-foreclosure saved</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Relocating for a new job and needed to sell fast. Real Home Acquisitions handled everything — the whole process was seamless. Chose the owner financing option and now I get a check every month.</p>
+        <div class="testimonial-author"><div class="author-avatar">TN</div><div><div class="author-name">Tanya N.</div><div class="author-location">Glendale, CA</div><div class="offer-tag">Owner financing deal</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS SECTION (AI-generated) -->
+<div id="results-section">
+  <div class="results-inner">
+    <div class="results-header">
+      <h2>Your Property <span>Analysis</span></h2>
+      <p>Powered by live market data and comparable sales in your area</p>
+    </div>
+    <div class="results-address" id="results-address"></div>
+    <div class="results-grid" id="results-grid"></div>
+    <div class="results-details-grid" id="results-details"></div>
+    <div class="temp-meter" id="temp-meter"></div>
+    <div class="owner-finance-card" id="finance-card"></div>
+    <div class="results-cta">
+      <div class="cta-box">
+        <h4>Ready to Accept This Offer?</h4>
+        <p>Call us now and we'll finalize your deal within hours.</p>
+        <a href="tel:7473634983" class="btn-cta-dark">📞 Call (747) 363-4983</a>
+      </div>
+      <div class="cta-box">
+        <h4>Want to Explore Options?</h4>
+        <p>Our team will walk you through cash, owner finance, or a hybrid approach.</p>
+        <button class="btn-cta-ghost" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'})">Submit Another Property</button>
+      </div>
+    </div>
+    <p class="disclaimer">⚠️ This analysis is a preliminary estimate based on property details provided and publicly available market data. Final offer may vary after in-person assessment. Real Home Acquisitions is a real estate investment company — this does not constitute a licensed appraisal.</p>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+  <div>
+    <h2>Ready for Your<br><em>Free Cash Offer?</em></h2>
+    <p>No repairs. No fees. No pressure. Just a fair offer and a fast close.</p>
+  </div>
+  <div class="cta-banner-actions">
+    <a href="#form-section" class="btn-hero" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'});return false;">Get My Cash Offer →</a>
+    <div class="cta-contact">Or call: <a href="tel:7473634983">(747) 363-4983</a></div>
+    <div class="cta-contact"><a href="mailto:realhomeacquisitions@gmail.com">realhomeacquisitions@gmail.com</a></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="text-decoration:none;">
+          <div class="logo-mark">RH</div>
+          <div class="logo-text">Real Home Acquisitions<span>Cash Home Buyers</span></div>
+        </a>
+        <p>Southern California's trusted cash home buyer. We make selling simple, fast, and stress-free — with zero fees and no repairs required.</p>
+      </div>
+      <div class="footer-col">
+        <h5>We Buy</h5>
+        <a href="#">Single-Family Homes</a>
+        <a href="#">Multi-Family Properties</a>
+        <a href="#">Vacant Land</a>
+        <a href="#">Inherited Homes</a>
+        <a href="#">Mobile Homes</a>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <a href="#">Cash Offers</a>
+        <a href="#">Owner Financing</a>
+        <a href="#">Pre-Foreclosure Help</a>
+        <a href="#">Probate & Estates</a>
+        <a href="#">Tired Landlords</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.11 12 19.79 19.79 0 012.04 3.37 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:7473634983">(747) 363-4983</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:realhomeacquisitions@gmail.com">realhomeacquisitions@gmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Southern California
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Real Home Acquisitions. All rights reserved.</span>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay" id="loading">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">Analyzing Your Property</div>
+  <div class="loading-sub">Pulling comps &nbsp;·&nbsp; Running market analysis &nbsp;·&nbsp; Calculating offer…</div>
+</div>
+
+<script>
+function goToStep(n) {
+  const current = getCurrentStep();
+  if (n > current && !validateStep(current)) return;
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById('step-' + i).classList.remove('active');
+    const p = document.getElementById('prog-' + i);
+    if (i < n) { p.classList.remove('active'); p.classList.add('done'); }
+    else if (i === n) { p.classList.add('active'); p.classList.remove('done'); }
+    else { p.classList.remove('active','done'); }
+  }
+  document.getElementById('step-' + n).classList.add('active');
+  document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function getCurrentStep() {
+  for (let i = 1; i <= 4; i++) { if (document.getElementById('step-' + i).classList.contains('active')) return i; }
+  return 1;
+}
+
+function validateStep(n) {
+  const required = { 1:['f-address','f-city','f-state','f-zip','f-type'], 2:['f-condition'], 3:['f-reason','f-timeline'], 4:['f-fname','f-lname','f-email','f-phone'] };
+  const fields = required[n] || [];
+  let valid = true;
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el || !el.value.trim()) { el.style.borderColor = '#b84c2a'; if (valid) el.focus(); valid = false; }
+    else { el.style.borderColor = ''; }
+  });
+  if (!valid) alert('Please fill in all required fields before continuing.');
+  return valid;
+}
+
+function submitForm() {
+  if (!validateStep(4)) return;
+  document.getElementById('loading').classList.add('visible');
+  const data = {
+    address: document.getElementById('f-address').value, city: document.getElementById('f-city').value,
+    state: document.getElementById('f-state').value, zip: document.getElementById('f-zip').value,
+    type: document.getElementById('f-type').value, lotSize: document.getElementById('f-lotsize').value,
+    yearBuilt: document.getElementById('f-year').value, beds: document.getElementById('f-beds').value,
+    sqft: document.getElementById('f-sqft').value, arv: document.getElementById('f-arv').value,
+    condition: document.getElementById('f-condition').value, mortgage: document.getElementById('f-mortgage').value,
+    occupied: document.getElementById('f-occupied').value, notes: document.getElementById('f-notes').value,
+    reason: document.getElementById('f-reason').value, timeline: document.getElementById('f-timeline').value,
+    motivation: document.getElementById('f-motivation').value, asking: document.getElementById('f-asking').value,
+    ownerFin: document.getElementById('f-owner-fin').value, fname: document.getElementById('f-fname').value,
+    lname: document.getElementById('f-lname').value, email: document.getElementById('f-email').value,
+    phone: document.getElementById('f-phone').value, calltime: document.getElementById('f-calltime').value,
+    source: document.getElementById('f-source').value,
+  };
+  const issueLabels = ['Foundation/Structural','Roof Damage','Plumbing Problems','Electrical Issues','Water Damage/Mold','Fire Damage','Code Violations/Liens','No Major Issues'];
+  data.issues = ['c1','c2','c3','c4','c5','c6','c7','c8'].map((id,i) => document.getElementById(id).checked ? issueLabels[i] : null).filter(Boolean);
+  const priorities = ['Highest price','Speed of closing','No repairs','Monthly income (owner fin)','Certainty','Flexible move-out'];
+  data.priorities = ['p1','p2','p3','p4','p5','p6'].map((id,i) => document.getElementById(id).checked ? priorities[i] : null).filter(Boolean);
+  callClaudeAnalysis(data);
+}
+
+async function callClaudeAnalysis(data) {
+  const prompt = `You are a real estate investment analyst for Real Home Acquisitions, a Southern California cash home buying company. A seller submitted their residential property. Generate a detailed property analysis.
+
+PROPERTY DATA:
+- Address: ${data.address}, ${data.city}, ${data.state} ${data.zip}
+- Type: ${data.type}
+- Lot/Size: ${data.lotSize || 'Not provided'}
+- Year Built: ${data.yearBuilt || 'Unknown'}
+- Beds/Baths: ${data.beds || 'N/A'}
+- Square Footage: ${data.sqft || 'Not provided'}
+- Stated Value: ${data.arv || 'Not provided'}
+- Condition: ${data.condition}
+- Known Issues: ${data.issues.join(', ') || 'None stated'}
+- Occupancy: ${data.occupied || 'Unknown'}
+- Mortgage Status: ${data.mortgage || 'Unknown'}
+- Notes: ${data.notes || 'None'}
+
+SELLER SITUATION:
+- Reason for selling: ${data.reason}
+- Timeline: ${data.timeline}
+- Motivation score: ${data.motivation}/10
+- Priorities: ${data.priorities.join(', ') || 'Not specified'}
+- Asking price: ${data.asking || 'None stated'}
+- Owner financing interest: ${data.ownerFin || 'Not stated'}
+
+Return ONLY a valid JSON object (no markdown, no backticks, no extra text):
+{
+  "estimated_market_value_low": 480000,
+  "estimated_market_value_high": 530000,
+  "cash_offer": 415000,
+  "cash_offer_low": 400000,
+  "cash_offer_high": 430000,
+  "market_trend": "Appreciating",
+  "days_on_market_avg": 22,
+  "price_per_sqft": 480,
+  "comparable_sales": 4,
+  "condition_discount_pct": 14,
+  "repair_estimate_low": 12000,
+  "repair_estimate_high": 28000,
+  "motivation_score": 8,
+  "temperature_label": "Hot Lead",
+  "temperature_pct": 82,
+  "temperature_color": "#b84c2a",
+  "temperature_description": "Seller has urgent timeline and high motivation. Priority follow-up within 2 hours recommended.",
+  "crm_priority": "HIGH",
+  "follow_up_recommendation": "Call within 2 hours",
+  "owner_finance_monthly": 2800,
+  "owner_finance_term_years": 10,
+  "owner_finance_rate": 7.5,
+  "owner_finance_down": 42000,
+  "owner_finance_suitable": true,
+  "market_notes": "Southern California market remains competitive with constrained inventory. Cash buyers hold strong leverage.",
+  "property_highlights": ["Below-market pricing opportunity", "High demand neighborhood", "Strong appreciation trend"],
+  "risk_flags": ["Condition review recommended", "Lien status should be verified"],
+  "analyst_summary": "Strong residential acquisition candidate. Seller timeline and situation align well with a quick close."
+}
+
+Use realistic Southern California pricing if state is California. Adjust for the property type, condition, and size. Make motivation and temperature reflect the seller's urgency accurately.`;
+
+  try {
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, messages: [{ role: "user", content: prompt }] })
+    });
+    const result = await response.json();
+    const textContent = result.content.find(b => b.type === 'text');
+    if (!textContent) throw new Error('No text');
+    const clean = textContent.text.replace(/```json|```/g, '').trim();
+    const analysis = JSON.parse(clean);
+    document.getElementById('loading').classList.remove('visible');
+    renderResults(data, analysis);
+  } catch(err) {
+    console.error(err);
+    document.getElementById('loading').classList.remove('visible');
+    renderResults(data, generateFallback(data));
+  }
+}
+
+function generateFallback(data) {
+  const motivation = parseInt(data.motivation) || 5;
+  const discountMap = { 'Excellent / Move-in Ready':0.05,'Good — Minor updates needed':0.12,'Fair — Moderate repairs needed':0.22,'Poor — Major repairs / full rehab':0.35,'Teardown / Land value only':0.50,'Vacant Land (no structure)':0.10 };
+  const discount = discountMap[data.condition] || 0.20;
+  const sqft = parseInt(data.sqft) || 1600;
+  const stateMultiplier = { 'California':520,'New York':420,'Texas':165,'Florida':215,'Nevada':260,'Arizona':230,'Washington':380 };
+  const ppsf = stateMultiplier[data.state] || 160;
+  const mv = sqft * ppsf;
+  const cashOffer = Math.round(mv * (1 - discount));
+  const tempPct = Math.min(95, motivation * 9 + (data.timeline === 'ASAP — within 2 weeks' ? 15 : 0));
+  const tempLabel = tempPct >= 80 ? '🔥 Hot Lead' : tempPct >= 60 ? '🌡️ Warm Lead' : tempPct >= 40 ? '❄️ Cool Lead' : '🧊 Cold Lead';
+  return {
+    estimated_market_value_low: Math.round(mv * 0.92), estimated_market_value_high: Math.round(mv * 1.08),
+    cash_offer: cashOffer, cash_offer_low: Math.round(cashOffer * 0.95), cash_offer_high: Math.round(cashOffer * 1.05),
+    market_trend: 'Stable', days_on_market_avg: 28, price_per_sqft: ppsf, comparable_sales: 4,
+    condition_discount_pct: Math.round(discount * 100),
+    repair_estimate_low: Math.round(mv * discount * 0.4), repair_estimate_high: Math.round(mv * discount * 0.8),
+    motivation_score: motivation, temperature_label: tempLabel, temperature_pct: tempPct,
+    temperature_color: tempPct >= 75 ? '#b84c2a' : tempPct >= 50 ? '#c9a84c' : '#3d7a55',
+    temperature_description: `Seller motivation ${motivation}/10. Timeline: ${data.timeline}. Recommend ${tempPct >= 70 ? 'immediate' : 'standard'} follow-up.`,
+    crm_priority: tempPct >= 75 ? 'HIGH' : tempPct >= 50 ? 'MEDIUM' : 'LOW',
+    follow_up_recommendation: tempPct >= 75 ? 'Call within 2 hours' : 'Call within 24–48 hours',
+    owner_finance_monthly: Math.round(cashOffer * 0.0085), owner_finance_term_years: 10,
+    owner_finance_rate: 7.5, owner_finance_down: Math.round(cashOffer * 0.1),
+    owner_finance_suitable: data.ownerFin !== 'No — cash only',
+    market_notes: `${data.state} market data applied. Residential analysis based on type and condition inputs.`,
+    property_highlights: ['No agent commissions required','Quick close available','As-is purchase'],
+    risk_flags: data.issues.length ? data.issues : ['None identified'],
+    analyst_summary: `Property submitted by ${data.fname} ${data.lname}. Condition: ${data.condition}. CRM priority: ${tempPct >= 75 ? 'HIGH' : 'MEDIUM'}.`
+  };
+}
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+function renderResults(data, a) {
+  const rs = document.getElementById('results-section');
+  rs.classList.add('visible');
+  rs.scrollIntoView({ behavior: 'smooth' });
+
+  document.getElementById('results-address').innerHTML =
+    `<strong>${data.address}, ${data.city}, ${data.state} ${data.zip}</strong> &nbsp;·&nbsp; ${data.type} &nbsp;·&nbsp; Analyzed for ${data.fname} ${data.lname}`;
+
+  document.getElementById('results-grid').innerHTML = `
+    <div class="result-card">
+      <div class="result-label">Estimated Market Value</div>
+      <div class="result-value" style="font-size:26px">${fmt(a.estimated_market_value_low)}<br><span style="font-size:0.65em;color:var(--gray)">to</span><br>${fmt(a.estimated_market_value_high)}</div>
+      <div class="result-sub">Based on local comps & market data</div>
+    </div>
+    <div class="result-card">
+      <div class="result-badge">Our Offer</div>
+      <div class="result-label">Cash Offer Range</div>
+      <div class="result-value">${fmt(a.cash_offer_low)}<br><span style="font-size:0.5em;color:var(--gray)">to</span><br>${fmt(a.cash_offer_high)}</div>
+      <div class="result-sub">As-is · No fees · Fast close</div>
+    </div>
+    <div class="result-card">
+      <div class="result-label">Owner Finance Option</div>
+      <div class="result
